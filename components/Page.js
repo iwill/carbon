@@ -1,7 +1,6 @@
 import React from 'react'
 import AuthContext from './AuthContext'
 import Meta from './Meta'
-import Header from './Header'
 import Footer from './Footer'
 import Announcement from './Announcement'
 import LoginButton from './LoginButton'
@@ -16,11 +15,10 @@ class Page extends React.Component {
   render() {
     const { children, enableHeroText, flex } = this.props
     return (
-      <main className="main mb3">
+      <main className="main mb3" _enableHeroText={enableHeroText}>
         <Meta />
         <AuthContext>
           <Announcement />
-          <Header enableHeroText={enableHeroText} />
           <div className="login-button-container">
             <LoginButton />
           </div>
@@ -33,7 +31,7 @@ class Page extends React.Component {
           {`
             .main {
               ${flex ? COLUMN : ''}
-              margin-top: 6rem;
+              margin-top: 3rem;
             }
             .login-button-container {
               position: absolute;
